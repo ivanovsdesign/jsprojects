@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.calc-body {
+    display: grid;
+    place-items: center;
+    margin: 2em 5em 2em 5em;
+    padding: 3em .1em;
+    border-radius: 2em;
+    width: 350px;
+    height: 650px;
+    background-color: rgb(197, 197, 197);
+}
+
+.screen-surface {
+    padding: 10px;
+    background-color: white;
+    width: 280px;
+    height: 130px;
+    position: relative;
+    transition: 1s ease-in-out;
+}
+
+.screen-surface:hover {
+    background: gray;
+    color: white;
+    transition: 1s ease-in-out;
+}
+
+.operation-field {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    overflow-wrap: anywhere;
+    overflow-y: auto;
+    width: 280px;
+    height: 60px;
+}
+
+.result-field {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-weight: bold;
+    font-size: 30pt;
+    padding: 10px;
+    max-width: 280px;
+    overflow-x: auto;
+
+}
+
+.keyboard {
+    width: 350x;
+    height: 450px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.calc-btn, .calc-btn-operator {
+    padding: 2em;
+    margin: .5em;
+}
+
+#plusbtn, #minusbtn, #multbtn, #dividebtn {
+    grid-row: 1/1;
+}
+
+#plusbtn {
+    grid-column: 1/1;
+}
+
+#minusbtn {
+    grid-column: 2/2;
+}
+
+#multbtn {
+    grid-column: 3/3;
+}
+
+#dividebtn {
+    grid-column: 4/4;
+}
+
+#eqbtn {
+    grid-row: 2/5;
+    grid-column: 4/4;
+}
+
+#clrbtn {
+    grid-row: 5/5;
+    grid-column: 3/5;
+}
+
+.result-field::-webkit-scrollbar{
+    height: 5px;
+    background-color: white;
+}
+
+.operation-field::-webkit-scrollbar  {
+    width: 5px;
+    background: white;
+}
+
+.result-field::-webkit-scrollbar-thumb, .operation-field::-webkit-scrollbar-thumb {
+    background:darkgrey;
+    border-radius: 2em;
+}
+
+.result-field::-webkit-scrollbar-button {
+    background-color:rgb(124, 124, 124);
+}
+
+.calc-btn, .calc-btn-operator {
+    background: white;
+    border: 2px solid rgb(201, 201, 201);
+    border-radius: .4em;
+    outline: none;
+    transition: .5s ease-in-out;
+}
+
+.calc-btn:hover {
+    background: grey;
+    color: white;
+    transition: .5s ease-in-out;
+}
+
+button#clrbtn.calc-btn-operator:hover {
+    background: rgb(194, 0, 0);
+    color: white;
+    transition: .5s ease-out;
+}
+
